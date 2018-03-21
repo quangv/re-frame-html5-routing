@@ -3,7 +3,8 @@
                  [org.clojure/clojurescript "1.9.908"]
                  [reagent "0.7.0"]
                  [re-frame "0.10.5"]
-                 [secretary "1.2.3"]]
+                 [bidi "1.20.3"]
+                 [kibu/pushy "0.3.2"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]]
 

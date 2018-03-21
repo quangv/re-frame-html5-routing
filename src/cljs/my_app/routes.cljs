@@ -1,4 +1,27 @@
+;; authored by J. PABLO FERNÁNDEZ - https://pupeno.com/2015/08/26/no-hashes-bidirectional-routing-in-re-frame-with-bidi-and-pushy/
+
 (ns my-app.routes
+  (:require [bidi.bidi :as bidi]
+            [pushy.core :as pushy]
+            [re-frame.core :as re-frame]
+            [my-app.events :as events]))
+
+(def routes ["/" {""      :home
+                  "about" :about}])
+
+(defn- parse-url [url]
+  (bidi/match-route routes url))
+
+(defn- dispatch-route [matched-route]
+  (let [panel-name (keyword (str (name (:handler matched-route)) "-panel"))]
+    (re-frame/dispatch [::events/set-active-panel panel-name])))
+
+(defn app-routes []
+  (pushy/start! (pushy/pushy dispatch-route parse-url)))
+
+(def url-for (partial bidi/path-for routes))
+
+(comment ns my-app.routes
   (:require-macros [secretary.core :refer [defroute]])
   (:import goog.History)
   (:require [secretary.core :as secretary]
@@ -8,7 +31,7 @@
             [my-app.events :as events]
             ))
 
-(defn hook-browser-navigation! []
+(comment defn hook-browser-navigation! []
   (doto (History.)
     (gevents/listen
      EventType/NAVIGATE
@@ -16,7 +39,7 @@
        (secretary/dispatch! (.-token event))))
     (.setEnabled true)))
 
-(defn app-routes []
+(comment defn app-routes []
   (secretary/set-config! :prefix "#")
   ;; --------------------
   ;; define routes here

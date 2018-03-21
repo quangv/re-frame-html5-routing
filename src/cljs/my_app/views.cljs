@@ -1,5 +1,6 @@
 (ns my-app.views
   (:require [re-frame.core :as re-frame]
+            [my-app.routes :as routes]
             [my-app.subs :as subs]
             ))
 
@@ -9,14 +10,14 @@
 (defn home-panel []
   (let [name (re-frame/subscribe [::subs/name])]
     [:div (str "Hello from " @name ". This is the Home Page.")
-     [:div [:a {:href "#/about"} "go to About Page"]]]))
+     [:div [:a {:href (routes/url-for :about)} "go to About Page"]]]))
 
 
 ;; about
 
 (defn about-panel []
   [:div "This is the About Page."
-   [:div [:a {:href "#/"} "go to Home Page"]]])
+   [:div [:a {:href (routes/url-for :home)} "go to Home Page"]]])
 
 
 ;; main
