@@ -1,8 +1,11 @@
-# Re-frame starter
-
-Using re-frame-template `lein new re-frame my-app +routes +aliases`
+# Re-frame Example/Starter
 
 Figwheel + Re-Frame + Bidi + Pushy (HTML5 no-hash routing)
+
+1. Using re-frame-template `lein new re-frame my-app +routes +aliases` - https://github.com/Day8/re-frame-template
+2. `dev-server/handler` by @mjg123 - https://github.com/bhauman/lein-figwheel/issues/344#issuecomment-243922855
+
+
 
 
 A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.

@@ -13,7 +13,8 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
-  :figwheel {:css-dirs ["resources/public/css"]}
+  :figwheel {:css-dirs ["resources/public/css"]
+             :ring-handler my-app.dev-server/handler}
 
   :aliases {"dev" ["do" "clean"
                         ["pdo" ["figwheel" "dev"]]]
