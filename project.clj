@@ -31,7 +31,8 @@
   {:builds
    [{:id           "dev"
      :source-paths ["src/cljs"]
-     :figwheel     {:on-jsload "my-app.core/mount-root"}
+     :figwheel     {:on-jsload "my-app.core/mount-root"
+                    :websocket-host :js-client-host}
      :compiler     {:main                 my-app.core
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
