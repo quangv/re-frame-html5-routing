@@ -1,4 +1,9 @@
-# my-app
+# Re-frame starter
+
+Using re-frame-template `lein new re-frame my-app +routes +aliases`
+
+Figwheel + Re-Frame + Bidi + Pushy (HTML5 no-hash routing)
+
 
 A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
 
