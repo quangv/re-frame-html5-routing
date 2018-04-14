@@ -9,7 +9,7 @@ Figwheel + Re-Frame + Bidi + Pushy (HTML5 no-hash routing)
 
 Thanks everyone!
 
-
+Also checkout https://github.com/quangv/shadow-re-frame-simple-example which uses [shadow-cljs](https://github.com/thheller/shadow-cljs) whose dev server supports html5 routes by default.
 
 
 A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
